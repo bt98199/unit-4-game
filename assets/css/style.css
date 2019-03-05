@@ -1,0 +1,44 @@
+header {
+    font-size: 2em;
+}
+
+//* .col-sm { float: left; }  *//
+
+#top-flashy {
+    color: rgb(13, 0, 255);
+}
+
+.thumbnail img {
+    margin: 20px;
+    width: 200px;
+    height: 200px;
+}
+
+#target-num {
+    color: purple;
+    font-size: 2.5 em;
+}
+
+#total-num {
+    color: purple;
+    font-size: 2.5 em;
+}
+
+#reset-button {
+    width: 60%;
+}
+
+
+@media only screen and (max-width: 700px) {
+    .thumbnail img {
+        margin: 20px;
+        width: 150 px;
+    }
+  }
+
+  @media only screen and (max-width: 500px) {
+    .thumbnail  {
+        margin: 10px;
+        width: 100 px;
+    }
+  }
