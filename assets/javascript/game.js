@@ -1,9 +1,5 @@
 
 
-document.getElementById("reset-button").addEventListener("click", function(){
-        document.getElementById("reset-button").style.display="none";
-});
-
 $(document).ready(function() {
 
 console.log("DOM fully loaded and parsed");
@@ -60,7 +56,7 @@ function winCheck() {
         alert("YOU WIN!");
         $("#wins").html(wins);
  //       reset();
-        document.getElementById("reset-button").style.display = "block";
+        $("reset-button").show();
 
     } else if (userTotal > targetNum) {
         losses++;
@@ -68,7 +64,7 @@ function winCheck() {
         alert("LOSER! LOSER! LOSER!");
         $("#losses").html(losses);
  //       reset();
-        document.getElementById("reset-button").display = "block";
+        $("reset-button").show();
     }
 };
 
@@ -104,8 +100,8 @@ $("#turq").on("click", function() {
 })
 
 $("#reset-button").on("click", function() {
-    reset()
+    reset();
+    $("reset-button").show();
 })
-
 
 });
