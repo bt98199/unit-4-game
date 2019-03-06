@@ -2,10 +2,20 @@ header {
     font-size: 2em;
 }
 
-//* .col-sm { float: left; }  *//
+img {
+    width: 100%;
+}
+
+ul li {
+    list-style-type: disc;
+}
 
 #top-flashy {
     color: rgb(13, 0, 255);
+}
+
+.col {
+    padding: 0;
 }
 
 .thumbnail img {
@@ -25,7 +35,9 @@ header {
 }
 
 #reset-button {
-    width: 60%;
+    display: none;
+    float: right;
+    width: 50%;
 }
 
 

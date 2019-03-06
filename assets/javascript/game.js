@@ -20,11 +20,12 @@ var redGem = 1 + Math.floor(Math.random() * 12);
 var topazGem = 1 + Math.floor(Math.random() * 12);
 var turqGem = 1 + Math.floor(Math.random() * 12);
 
-//set all variables to 0
+//set all variables to 0 (except "Is Active," which is set to active)
 
 var userTotal = 0;
 var wins = 0;
 var losses = 0;
+var isAct = 1;
 $("#total-num").html(userTotal);
 $("#wins").html(wins);
 $("#losses").html(losses);
@@ -43,28 +44,41 @@ function reset() {
     $("#total-num").html(userTotal);
     $("#wins").html(wins);
     $("#losses").html(losses);
+    isAct = 1;
 }
 
 //if else statement for winning or losing. 
 //if total === random win.
 //if total > random lose.
 
+$("#hide").click(function(){
+    $("p").hide();
+  });
+  
+  $("#show").click(function(){
+    $("p").show();
+  });
+
 function winCheck() {
     if (userTotal == targetNum) {
         wins++;
-        $("#total-num").html("FinalScore: " + userTotal); //
-        alert("YOU WIN!");
+        $("#total-num").html("(You Won)"+"<br>"+"Final Score: " + userTotal); //    
         $("#wins").html(wins);
- //       reset();
-        $("reset-button").show();
+ //       reset();  I don't want to reset right after the game ends.  I want to examine the final scores
+ //       $("#reset-button" ).toggle();  This is not as useful as show/hide.
+        $("#reset-button").show();
+        isAct = 0;
+        alert("YOU WIN!");
 
     } else if (userTotal > targetNum) {
         losses++;
-        $("#total-num").html("FinalScore: " + userTotal); //
-        alert("LOSER! LOSER! LOSER!");
+        $("#total-num").html("(You Lost)"+"<br>"+"Final Score: " + userTotal); //
         $("#losses").html(losses);
  //       reset();
-        $("reset-button").show();
+ //       $("#reset-button" ).toggle();
+        $("#reset-button").show();
+        isAct = 0;
+        alert("You lost.");
     }
 };
 
@@ -72,36 +86,53 @@ function winCheck() {
 //show this number under #total-num
 
 $("#hema").on("click", function() {
+    if (isAct === 0) {
+        alert("Hit play again button to keep playing");
+    } else {
     userTotal = userTotal + hemaGem;
     console.log("hemaGem is: " + hemaGem + " userTotal is: " + userTotal);
     $("#total-num").html(userTotal);
     winCheck();
-})
+}})
 
 $("#red").on("click", function() {
+    if (isAct === 0) {
+        alert("Hit play again button to keep playing");
+    } else {
     userTotal = userTotal + redGem;
     console.log("redGem is: " + redGem + " userTotal is: " + userTotal);
     $("#total-num").html(userTotal);
     winCheck();
-})
+}})
 
 $("#topaz").on("click", function() {
+    if (isAct === 0) {
+        alert("Hit play again button to keep playing");
+    } else {
     userTotal = userTotal + topazGem;
     console.log("topazGem is: " + topazGem + " userTotal is: " + userTotal);
     $("#total-num").html(userTotal);
     winCheck();
-})
+}})
 
 $("#turq").on("click", function() {
+    if (isAct === 0) {
+        alert("Hit play again button to keep playing");
+    } else {
     userTotal = userTotal + turqGem;
     console.log("turqGem is: " + turqGem + " userTotal is: " + userTotal);
     $("#total-num").html(userTotal);
     winCheck();
-})
+}})
 
 $("#reset-button").on("click", function() {
     reset();
-    $("reset-button").show();
+    $("#reset-button").hide();
+    isAct = 1;
 })
+
+
+
+
 
 });
