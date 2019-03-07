@@ -1,3 +1,22 @@
+Notes on development
+1. I added the ability to see the final score after the end of a game so you can see how close you came to getting the targeted number.  This meant showing a reset button to kick off the game again (I suppose I could have just used a "Press Any Key" method as well)
+2. I used the card bootstrap styling because it seems a pretty clean way to display data
+3. I added a greyscale hover over feature that probably is not great for game play but looked pretty cool
+4. I added the ability to make sure none of the gem numbers were equal to each other during the reset() process
+
+Future changes could be
+1. Have the reset() process re-roll the data if the game was unwinnable.  It may take a while to come up with the necessary parameters other than the easier use cases of:
+  a. All the gem numbers are even and the target number is odd
+  b. All the gem nunbers are dividable by 3 but the target number is not
+2. Enable a cheat mode function where a button can reveal the numbers on top of the gems after you click them.
+3. Add in some animations where the gems fly in from off screen on page load
+  
+
+
+
+
+
+
 # jQuery Assignment
 
 ### Overview
