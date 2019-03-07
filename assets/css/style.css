@@ -6,16 +6,25 @@ img {
     width: 100%;
 }
 
-ul li {
-    list-style-type: disc;
+.col-lg-12 {
+    padding-left: 0px;
+    padding-right: 0px;
 }
 
+ul li {
+    list-style-type: disc;
+   margin-left: 20px; 
+    font-size: 0.9em;
+}
+.container {
+    width: 960px;
+}
 #top-flashy {
     color: rgb(13, 0, 255);
 }
 
-.col {
-    padding: 0;
+.card-body {
+    padding: 0px;
 }
 
 .thumbnail img {
