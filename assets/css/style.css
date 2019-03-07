@@ -28,9 +28,9 @@ ul li {
 }
 
 .thumbnail img {
-    margin: 20px;
-    width: 200px;
-    height: 200px;
+    margin: 10px;
+    width: 150px;
+    height: 150px;
 }
 
 #target-num {
@@ -62,4 +62,18 @@ ul li {
         margin: 10px;
         width: 100 px;
     }
+  }
+
+  img#hema, img#red, img#topaz, img#turq {
+    filter: url(filters.svg#grayscale); /* Firefox 3.5+ */
+    filter: gray; /* IE5+ */
+    -webkit-filter: grayscale(1); /* Webkit Nightlies & Chrome Canary */
+    -webkit-transition: all .5s ease-in-out;
+  }
+
+  img#hema:hover, img#red:hover, img#topaz:hover, img#turq:hover  {
+    filter: none;
+    -webkit-filter: grayscale(0);
+    -webkit-transform: scale(1.3);
+    border-radius: 50%;
   }

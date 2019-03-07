@@ -1,5 +1,3 @@
-
-
 $(document).ready(function() {
 
 console.log("DOM fully loaded and parsed");
@@ -45,6 +43,11 @@ function reset() {
     $("#wins").html(wins);
     $("#losses").html(losses);
     isAct = 1;
+// Make sure none of the gem numbers are identical
+    if (hemaGem === redGem || hemaGem === topazGem || hemaGem === turqGem || redGem === topazGem || redGem === turqGem || topazGem === turqGem) {
+        console.log("duplicate gemNums, re-rolling data");
+        reset();
+    }
 }
 
 //if else statement for winning or losing. 
@@ -89,7 +92,7 @@ $("#hema").on("click", function() {
     if (isAct === 0) {
         alert("Hit play again button to keep playing");
     } else {
-    userTotal = userTotal + hemaGem;
+    userTotal += hemaGem;
     console.log("hemaGem is: " + hemaGem + " userTotal is: " + userTotal);
     $("#total-num").html(userTotal);
     winCheck();
@@ -99,7 +102,7 @@ $("#red").on("click", function() {
     if (isAct === 0) {
         alert("Hit play again button to keep playing");
     } else {
-    userTotal = userTotal + redGem;
+    userTotal += redGem;
     console.log("redGem is: " + redGem + " userTotal is: " + userTotal);
     $("#total-num").html(userTotal);
     winCheck();
@@ -109,7 +112,7 @@ $("#topaz").on("click", function() {
     if (isAct === 0) {
         alert("Hit play again button to keep playing");
     } else {
-    userTotal = userTotal + topazGem;
+    userTotal += topazGem;
     console.log("topazGem is: " + topazGem + " userTotal is: " + userTotal);
     $("#total-num").html(userTotal);
     winCheck();
@@ -119,7 +122,7 @@ $("#turq").on("click", function() {
     if (isAct === 0) {
         alert("Hit play again button to keep playing");
     } else {
-    userTotal = userTotal + turqGem;
+    userTotal += turqGem;
     console.log("turqGem is: " + turqGem + " userTotal is: " + userTotal);
     $("#total-num").html(userTotal);
     winCheck();
@@ -129,6 +132,7 @@ $("#reset-button").on("click", function() {
     reset();
     $("#reset-button").hide();
     isAct = 1;
+    
 })
 
 
